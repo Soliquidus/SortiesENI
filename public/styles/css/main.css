@@ -788,100 +788,9 @@ a:not([href]):not([tabindex]):focus, a:not([href]):not([tabindex]):hover {
   text-align: center;
 }
 
-/* ==========================================================================
-6. General forms
-========================================================================== */
-.generalForm {
-  position: relative;
-}
-
-.icon-generalForm{
-  color: #3399cc;
-}
-
-.generalForm-row {
-  padding: 4rem 2rem 1rem;
-  justify-content: center;
-}
-
-.generalForm .generalForm-title {
-  font-size: 20px;
-  text-transform: uppercase;
-  margin-left: 25px;
-}
-
-.generalForm li {
-  padding: 0px 2px 17px 30px;
-  list-style: none;
-  border-left: 2px solid #f1f1f1;
-}
-
-.generalForm li .content-text {
-  background: #f2f2f2;
-  padding: 20px;
-}
-
-.generalForm li .line-title {
-  font-size: 16px;
-  line-height: 6px;
-}
-
-.generalForm li span {
-  font-size: 12px;
-  padding: 9px 0;
-  display: block;
-}
-
-.generalForm li .line-text {
-  color: #888;
-  line-height: 18px;
-}
-
-.generalForm li:first-child:before {
-  border: 0;
-  background: none;
-  position: relative;
-}
-
-.generalForm li:last-child {
-  padding: 20px 0px 30px 35rem;
-}
-
 .btn btn-primary {
   background-color: #3399cc;
   border-color: #3399cc
-}
-
-.generalForm li:before {
-  content: "";
-  border: solid 2px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50px;
-  -moz-border-radius: 50px;
-  -webkit-border-radius: 50px;
-  font-size: 8px;
-  margin-left: -35px;
-  font-weight: 400;
-  background: #fff;
-  display: block;
-  position: absolute;
-  margin-top: 18px;
-  border-color: #3399cc !important;
-}
-
-.generalForm li:first-child i {
-  font-size: 20px;
-  float: left;
-  margin-left: -30px;
-  line-height: 50px;
-  border-radius: 30px;
-  margin: -12px -55px;
-  background: #3399cc;
-  color: #fff;
-  width: 50px;
-  height: 50px;
-  text-align: center;
 }
 
 .navbar-brand {
@@ -1130,59 +1039,6 @@ a:not([href]):not([tabindex]):focus, a:not([href]):not([tabindex]):hover {
     background: #f8f9fa;
   }
 }
-
-/*!* ==========================================================================*/
-/*8. Services Items*/
-/*========================================================================== *!*/
-/*.services {*/
-/*  background: #F0F0F0;*/
-/*}*/
-
-/*.services-item {*/
-/*  background: #fff;*/
-/*  border-radius: 4px;*/
-/*  padding: 48px 20px;*/
-/*  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);*/
-/*  text-align: center;*/
-/*  transition: all 0.3s ease-in-out 0s;*/
-/*  -moz-transition: all 0.3s ease-in-out 0s;*/
-/*  -webkit-transition: all 0.3s ease-in-out 0s;*/
-/*  -o-transition: all 0.3s ease-in-out 0s;*/
-/*}*/
-
-/*.services-item .icon i {*/
-/*  font-size: 42px;*/
-/*  margin-bottom: 15px;*/
-/*  text-align: center;*/
-/*  width: 48px;*/
-/*  display: block;*/
-/*  margin: 0 auto;*/
-/*  height: 48px;*/
-/*  color: #3399cc;*/
-/*}*/
-
-/*.services-item .services-content h3 {*/
-/*  margin-top: 10px;*/
-/*  margin-bottom: 10px;*/
-/*}*/
-
-/*.services-item .services-content h3 a {*/
-/*  font-size: 18px;*/
-/*  text-transform: uppercase;*/
-/*  color: #666;*/
-/*}*/
-
-/*.services-item .services-content h3 a:hover {*/
-/*  color: #3399cc;*/
-/*}*/
-
-/*.services-item .services-content p {*/
-/*  line-height: 22px;*/
-/*}*/
-
-/*.services-item:hover {*/
-/*  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);*/
-/*}*/
 
 .form-control {
   width: 100%;
