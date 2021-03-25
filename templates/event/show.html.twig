@@ -1,0 +1,124 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% trans %}Event details{% endtrans %}{% endblock %}
+
+{% block body %}
+    <section id="eventShow" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="img-thumb" data-wow-delay="0.3s">
+                        {% if event.urlPicture is not empty %}
+                            <img class="img-fluid" src="{{ event.urlPicture }}" alt="">
+                        {% else %}
+                            <img class="img-fluid" src="{{ asset('files/images/eventGoingOut.jpg') }}" alt=""/>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="profile-wrapper">
+                        <h3 class="script-font wow fadeInDown" data-wow-delay="0.1s">{{ event.title }}</h3>
+                        <p class="wow fadeInUp" data-wow-delay="0.1s">{{ event.description }}</p>
+                        <div class="event-profile">
+                            <ul class="event-profile">
+                                <li><span class="event-title wow fadeInLeft" data-wow-delay="0.2s"> {% trans %}Address{% endtrans %} </span>
+                                    <span class="event-detail wow fadeInLeft" data-wow-delay="0.2s">{{ event.address.street }} </span></li>
+                                <li><span class="event-title wow fadeInLeft" data-wow-delay="0.3s"> {% trans %}City{% endtrans %} </span>
+                                    <span class="event-detail wow fadeInLeft" data-wow-delay="0.3s">{{ event.address.city.postalCode }}
+                                    <b>{{ event.address.city.cityName | upper }}</b> </span></li>
+                                <li><span class="event-title wow fadeInLeft" data-wow-delay="0.4s"> {% trans %}Starts{% endtrans %} </span>
+                                    <span class="event-detail wow fadeInLeft" data-wow-delay="0.4s">{{ event.beginsAt | format_datetime('full', 'short') | title }}</span></li>
+                                <li><span class="event-title wow fadeInLeft" data-wow-delay="0.4s"> {% trans %}Ends{% endtrans %} </span>
+                                    <span class="event-detail wow fadeInLeft" data-wow-delay="0.4s">{{ event.endsAt | format_datetime('full', 'short') | title }}</span></li>
+                                <li><span class="event-title wow fadeInLeft" data-wow-delay="0.4s"> {% trans %}Slots{% endtrans %} </span>
+                                    <span class="event-detail wow fadeInLeft" data-wow-delay="0.4s">{{ event.subscriptionsMax }}</span></li>
+                                <li><span class="event-title wow fadeInLeft" data-wow-delay="0.5s"> {% trans %}Subscribers{% endtrans %} </span>
+                                    <span class="event-detail wow fadeInLeft" data-wow-delay="0.5s">{{ event.subscriptions | length }}</span></li>
+                                <li><span class="event-title wow fadeInLeft" data-wow-delay="0.6s"> {% trans %}Organizer{% endtrans %} </span>
+                                    <span class="event-detail wow fadeInLeft" data-wow-delay="0.6s">{{ event.creator.username }}</span></li>
+                                <li><span class="event-title wow fadeInLeft" data-wow-delay="0.7s"> {% trans %}Students{% endtrans %} </span>
+                                    {% if subscribers is not empty %}
+                                        {% for subscriber in subscribers %}
+                                            <span class="event-detail wow fadeInLeft" data-wow-delay="0.7s">| {{ subscriber.subscriber.username }} |</span>
+                                        {% endfor %}
+                                    {% endif %}
+                                </li>
+                            </ul>
+                        </div>
+
+                        {% set subscribed = false %}
+                        {% for subscription in app.user.subscriptions %}
+                            {% for subscriptions in event.subscriptions %}
+                                {% if subscription == subscriptions %}
+                                    {% set subscribed = true %}
+                                {% endif %}
+                            {% endfor %}
+                        {% endfor %}
+                        {% if subscribed and event.endsAt | date ('Y-m-d') > 'now' | date('Y-m-d') %}
+                            <a href="{{ path('remove_subscriber_event', {'id': event.id}) }}" class="btn btn-danger wow fadeInUp" data-wow-delay="1.00s"><i
+                                        class="icon-paper-clip"></i>{% trans %}Cancel subscription{% endtrans %}</a>
+                        {% elseif event.subscriptions | length != event.subscriptionsMax and event.endsAt|date('Y-m-d') > "now"|date('Y-m-d') and event.state == "Ouvert" %}
+                            <a href="{{ path('add_subscriber_event', {'id': event.id}) }}" class="btn btn-success wow fadeInUp" data-wow-delay="1.00s"><i
+                                        class="icon-paper-clip"></i>{% trans %}Subscribe to event{% endtrans %}</a>
+                        {% else %}
+                            <a class="btn btn-dark" href="#" title="{% trans %}Subscription not available{% endtrans %}">
+                                {% trans %}Subscription not available{% endtrans %}
+                            </a>
+                        {% endif %}
+                        <a href="#" id="contactButton" class="btn btn-info wow fadeInUp" data-wow-delay="1.00s" {% if form.vars.submitted %} style="display: none" {% endif %}><i
+                                    class="icon-speech"></i>{% trans %}Contact organizer{% endtrans %}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+        <form method="post" action="{{ path('show_event', {id: event.id}) }}">
+            <section id="about" class="section-padding">
+                <div class="container" id="contactForm" class="mt-4" {% if not form.vars.submitted %} style="display: none" {% endif %}>
+                    <div class="row login-row">
+                        <div class="col-lg-5 col-md-5 col-sm-5 login-row">
+                            <div class="education wow fadeInRight" data-wow-delay="0.3s">
+                                <ul class="login">
+                                    <li>
+                                        <i class="icon-pencil"></i>
+                                        <h2 class="login-title">{% trans %}Contact Organizer{% endtrans %}</h2>
+                                    </li>
+                                    <li>
+                                        <div class="content-text">
+                                            <h3 class="line-title">{% trans %}Last name{% endtrans %}</h3>
+                                            <label class="_lastName"></label>{{ form_widget(form.lastname, {'attr': {'class': 'form-control'}}) }}
+                                            <h3 class="line-title">{% trans %}First name{% endtrans %}</h3>
+                                            <label class="_firstName"></label>{{ form_widget(form.firstname, {'attr': {'class': 'form-control'}}) }}
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="content-text">
+                                            <h3 class="line-title">{% trans %}Phone number{% endtrans %}</h3>
+                                            <label for="_phoneNumber"></label>{{ form_widget(form.phone, {'attr': {'class': 'form-control'}}) }}
+                                            <h3 class="line-title">Email</h3>
+                                            <label class="_email"></label> {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="content-text">
+                                            <h3 class="line-title">Message</h3>
+                                            <label for="_message"></label>{{ form_widget(form.message, {'attr': {'class': 'form-control'}}) }}
+                                        </div>
+                                    </li>
+                                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                                    <button class="btn-primary btn save w-100">{% trans %}Send message{% endtrans %}</button>
+                                    {{ form_end(form) }}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </form>
+    </section>
+
+{% endblock %}

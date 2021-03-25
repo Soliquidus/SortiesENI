@@ -1,0 +1,71 @@
+{% set current_path = app.request.get('_route') %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>SortiesENI.com | {% block title %}{% endblock %}</title>
+    {% block stylesheets %}
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" type="text/css" href="{{ asset('styles/css/bootstrap.min.css') }}">
+        <!-- Fonts -->
+        <link rel="stylesheet" type="text/css" href="{{ asset('styles/fonts/font-awesome.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('styles/fonts/iconic/css/material-design-iconic-font.min.css') }}">
+        <!-- Icon -->
+        <link rel="stylesheet" type="text/css" href="{{ asset('styles/fonts/simple-line-icons.css') }}">
+        <!-- Slicknav -->
+        <link rel="stylesheet" type="text/css" href="{{ asset('styles/css/slicknav.css') }}">
+        <!-- Nivo Lightbox -->
+        <link rel="stylesheet" type="text/css" href="{{ asset('styles/css/nivo-lightbox.css') }}">
+        <!-- Animate -->
+        <link rel="stylesheet" type="text/css" href="{{ asset('styles/css/animate.css') }}">
+        <!-- Main Style -->
+        <link rel="stylesheet" type="text/css" href="{{ asset('styles/css/main.css') }}">
+        <!-- Responsive Style -->
+        <link rel="stylesheet" type="text/css" href="{{ asset('styles/css/responsive.css') }}">
+        <!-- Form Style -->
+        <link rel="stylesheet" href="{{ asset('styles/dataTables.bootstrap4.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('styles/tempusdominus-bootstrap-4.min.css') }}">
+
+    {% endblock %}
+</head>
+<body>
+{% block header %}
+    {% include 'elements/navbar.html.twig' %}
+{% endblock %}
+
+{% include 'elements/alert.html.twig' %}
+
+{% block body %}{% endblock %}
+{% block footer %}
+    {% include 'elements/footer.html.twig' %}
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/jquery-min.js') }}"></script>
+    <script src="{{ asset('js/popper.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.mixitup.js') }}"></script>
+    <script src="{{ asset('js/jquery.counterup.min.js') }}"></script>
+    <script src="{{ asset('js/waypoints.min.js') }}"></script>
+    <script src="{{ asset('js/wow.js') }}"></script>
+    <script src="{{ asset('js/jquery.nav.js') }}"></script>
+    <script src="{{ asset('js/jquery.easing.min.js') }}"></script>
+    <script src="{{ asset('js/nivo-lightbox.js') }}"></script>
+    <script src="{{ asset('js/jquery.slicknav.js') }}"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
+    <script src="{{ asset('js/tooltip.min.js') }}"></script>
+    <script src="{{ asset('js/all.min.js') }}"></script>
+    <script src="{{ asset('js/moment.js') }}"></script>
+    <script src="{{ asset('js/momentfr.js') }}"></script>
+    <script src="{{ asset('js/tempusdominus-bootstrap-4.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('js/dataTables.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('js/dataTables.responsive.min.js') }}"></script>
+    <script src="{{ asset('js/dataTables.rowReorder.min.js') }}"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
+    <script src="{{ asset('js/custom_dataTables.js') }}"></script>
+    <script src="{{ asset('js/bs-custom-file-input.min.js') }}"></script>
+{% endblock %}
+</body>
+</html>

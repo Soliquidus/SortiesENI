@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% trans %}Login{% endtrans %}{% endblock %}
+
+{% block body %}
+    <form method="post" action="{{ path('security_login') }}">
+        <section id="about" class="section-padding">
+            <div class="container">
+                <div class="row login-row">
+                    <div class="col-lg-5 col-md-5 col-sm-5 login-row">
+                        <div class="education wow fadeInRight" data-wow-delay="0.3s">
+                            <ul class="login">
+                                <li>
+                                    <i class="icon-login"></i>
+                                    <h2 class="login-title">{% trans %}Login{% endtrans %}</h2>
+                                    {% if error %}
+                                        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                                    {% endif %}
+                                </li>
+                                <li>
+                                    <div class="content-text">
+                                        <h3 class="line-title">{% trans %}Username{% endtrans %}</h3><br>
+                                        <label for="_username"></label><input type="text" class="form-control" id="_username" name="_username" placeholder="{% trans %}Enter your username{% endtrans %}"
+                                                                              value="{{ last_username }}">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="content-text">
+                                        <h3 class="line-title">{% trans %}Password{% endtrans %}</h3><br>
+                                        <label for="_password"></label><input type="password" class="form-control" id="_password" name="_password" placeholder="{% trans %}Enter your password{% endtrans %}" value="">
+                                        <div class="form-check">
+                                            <label for="_remember_me"></label><input type="checkbox" class="form-check-input" id="_remember_me" checked>
+                                            <label class="form-check-label" for="remember_me">{% trans %}Remember me{% endtrans %}</label>
+                                        </div>
+                                    </div>
+                                </li>
+                                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                                <button type="submit" class="btn btn-primary w-100">{% trans %}Connect{% endtrans %}</button>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </form>
+{% endblock %}

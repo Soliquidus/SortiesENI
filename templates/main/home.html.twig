@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% trans %}Home{% endtrans %}{% endblock %}
+
+{% block body %}
+    <div id="home-area" class="home-area-bg">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 text-center">
+                    <div class="contents">
+                        <h5 class="script-font wow fadeInUp" data-wow-delay="0.2s">{% trans %}Welcome on{% endtrans %}</h5>
+                        <h2 class="head-title wow fadeInUp" data-wow-delay="0.4s">Sorties-ENI.com</h2>
+                        <p class="script-font wow fadeInUp" data-wow-delay="0.6s">{% trans %}The best way to organize events between students{% endtrans %}</p>
+                        <div class="header-button wow fadeInUp" data-wow-delay="1s">
+                            <a href="{{ path('events') }}" class="btn btn-common">{% trans %}See events{% endtrans %}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><br>
+    <div class="col-md-12 col-sm-12 text-center inter-home">
+        <h2 class="head-title wow fadeInUp" data-wow-delay="0.4s">{% trans %}Last event created{% endtrans %}</h2>
+        <img class="home-line wow fadeInLeftBig" src="{{ asset('files/images/line.png') }}" alt="">
+    </div>
+    <section id="event" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="img-thumb wow fadeInUp" data-wow-delay="0.3s">
+                        {% if event.urlPicture is not empty %}
+                            <img class="img-fluid" src="{{ event.urlPicture }}" alt="">
+                        {% else %}
+                            <img class="img-fluid" src="{{ asset('files/images/eventGoingOut.jpg') }}" alt=""/>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="profile-wrapper wow fadeInRight" data-wow-delay="0.3s">
+                        <h3 class="script-font wow fadeInUp" data-wow-delay="0.6s">{{ event.title }}</h3>
+                        <p>{{ event.description }}</p>
+                        <div class="event-profile">
+                            <ul class="event-profile">
+                                <li><span class="event-title"> {% trans %}Address{% endtrans %} </span><span class="event-detail">{{ event.address }} </span></li>
+                                <li><span class="event-title"> {% trans %}City{% endtrans %} </span><span class="event-detail">{{ event.address.city.postalCode }} <b>{{ event.address.city.cityName | upper }}</b> </span></li>
+                                <li><span class="event-title"> {% trans %}Slots{% endtrans %} </span> <span class="event-detail">{{ event.subscriptionsMax }}</span></li>
+                                <li><span class="event-title"> {% trans %}Subscribers{% endtrans %} </span> <span class="event-detail">{{ event.subscriptions | length }}</span></li>
+                                <li><span class="event-title"> {% trans %}Student{% endtrans %} </span> <span class="event-detail">{{ event.creator.username }}</span></li>
+                            </ul>
+                        </div>
+                        <a href="{{ path('show_event', {id: event.id, slug: event.slug}) }}" class="btn btn-common w-50"><i class="icon-paper-clip"></i>{% trans %}Event page{% endtrans %}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

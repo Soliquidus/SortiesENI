@@ -1,0 +1,145 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% trans %}Events{% endtrans %}{% endblock %}
+
+{% block body %}
+    <div class="container eventIndex-container">
+        <h2 class="section-title wow fadeInUp">{% trans %}Events{% endtrans %}</h2>
+        <div class="row-event">
+            <div class="col-md-12">
+                <div class="controls text-center wow fadeInDown" data-wow-delay="0.3s">
+                    <a href="{{ path('add_event') }}" class="filter active btn btn-common">{% trans %}Add event{% endtrans %}</a>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="controls text-center wow fadeInDown">
+                    <a class="filter active btn btn-common" data-filter="all">
+                        {% trans %}All campuses{% endtrans %}
+                    </a>
+                    <a class="filter btn btn-common" data-filter=".nantes">
+                        Saint-Herblain
+                    </a>
+                    <a class="filter btn btn-common" data-filter=".rennes">
+                        Chartres-de-Bretagne
+                    </a>
+                    <a class="filter btn btn-common" data-filter=".laRoche">
+                        La Roche-Sur-Yon
+                    </a>
+                    <a class="filter btn btn-common" data-filter=".poitiers">
+                        Poitiers
+                    </a>
+                    <a class="filter btn btn-common" data-filter=".eni">
+                        ENI
+                    </a>
+                </div>
+            </div>
+            {% if form is defined and form is not empty %}
+                <div class="col-md-12 searchArea">
+                    <div class="controls text-center wow fadeInUp" data-wow-delay="0.3s" id="searchAreaHeader" style="cursor: pointer;">
+                        <h3 class="searchTool">{% trans %}Search{% endtrans %}
+                            <i id="down" class="fas fa-caret-square-up" style="display: none;"></i>
+                            <i id="up" class="fas fa-caret-square-down"></i>
+                        </h3>
+                    </div>
+                    <div id="searchArea" style="display: none;">
+                        {{ form_start(form) }}
+                        {{ form_errors(form) }}
+                        <div class="row wow fadeInDown" data-wow-delay="0.1s">
+                            <div class="form-col col-lg-8">
+                                <div class="form-group col-lg-auto">
+                                    {{ form_row(form.name) }}
+                                </div>
+                                <div class="form-group col-lg-auto">
+                                    {{ form_row(form.minDate) }}
+                                </div>
+                                <div class="form-group col-lg-auto">
+                                    {{ form_row(form.maxDate) }}
+                                </div>
+                            </div>
+                            <div class="form-col col-md-auto">
+                                <div class="form-group col-md-auto">
+                                    {{ form_row(form.ownCreator) }}
+                                </div>
+                                <div class="form-group col-md-auto">
+                                    {{ form_row(form.subscribed) }}
+                                </div>
+                                <div class="form-group col-md-auto">
+                                    {{ form_row(form.unsubscribed) }}
+                                </div>
+                                <div class="form-group col-md-auto">
+                                    {{ form_row(form.passed) }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wow fadeInDown text-center" data-wow-delay="0.1s">{{ form_row(form.submit) }}</div>
+                        {{ form_widget(form._token) }}
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+            {% endif %}
+
+            <div id="eventIndex" class="row fadeInUp">
+                {% for event in events %}
+                    <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix campus
+                            {% if event.campus.campusName == 'Saint-Herblain' %}nantes{% endif %}
+                            {% if event.campus.campusName == 'Chartres-de-Bretagne' %}rennes{% endif %}
+                            {% if event.campus.campusName == 'La Roche-Sur-Yon' %}laRoche{% endif %}
+                            {% if event.campus.campusName == 'Poitiers' %}poitiers{% endif %}
+                            {% if event.campus.campusName == 'ENI' %}eni{% endif %}">
+                        <div class="eventIndex-item">
+                            <div class="shot-item">
+                                {% if event.urlPicture is not empty %}
+                                    <img src="{{ event.urlPicture }}" alt=""/>
+                                {% else %}
+                                    <img src="{{ asset('files/images/eventGoingOut.jpg') }}" alt=""/>
+                                {% endif %}
+                                <b><a href="{{ path('show_event', {id: event.id, slug: event.slug}) }}">{{ event.title }}</a></b>
+                                <p> {{ event.subscriptionsMax }} {% trans %}people{% endtrans %} - {{ event.beginsAt | date|format_date('full') | title }}</p>
+                                <p><b>{{ event.address.city.cityName }}</b></p>
+                                <div class="overlay">
+                                    <p>{{ event.description }}</p>
+                                    <div class="icons">
+                                        <a class="lightbox preview" href="{{ path('show_event', {id: event.id, slug: event.slug}) }}" title="{% trans %}Event details{% endtrans %}">
+                                            <i class="icon-eye tootlip"></i>
+                                        </a>
+                                        {% set subscribed = false %}
+                                        {% for subscription in app.user.subscriptions %}
+                                            {% for subscriptions in event.subscriptions %}
+                                                {% if subscription == subscriptions %}
+                                                    {% set subscribed = true %}
+                                                {% endif %}
+                                            {% endfor %}
+                                        {% endfor %}
+                                        {% if subscribed and event.endsAt | date ('Y-m-d') > 'now' | date('Y-m-d') %}
+                                            <a class="link" href="{{ path('remove_subscriber_event', {'id': event.id}) }}" title="{% trans %}Cancel subscription{% endtrans %}">
+                                                <i class="icon-action-undo" style="background-color: darkred; color: white"></i>
+                                            </a>
+                                        {% elseif event.subscriptions | length != event.subscriptionsMax and event.endsAt|date('Y-m-d') > "now"|date('Y-m-d') and event.state == "Ouvert" %}
+                                            <a class="link" href="{{ path('add_subscriber_event', {'id': event.id}) }}" title="{% trans %}Subscribe to event{% endtrans %}">
+                                                <i class="icon-action-redo" style="background-color: green; color: white"></i>
+                                            </a>
+                                        {% else %}
+                                            <a class="link" href="#" title="{% trans %}Subscription not available{% endtrans %}">
+                                                <i class="icon-close" style="background-color: gray; color: white"></i>
+                                            </a>
+                                        {% endif %}
+                                        {% if event.creator == app.user %}
+                                            <a class="link" href="{{ path('edit_event', {'id': event.id}) }}" title="{% trans %}Edit event{% endtrans %}">
+                                                <i class="icon-pencil" style="background-color: green; color: white"></i>
+                                            </a>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/events.js') }}"></script>
+{% endblock %}

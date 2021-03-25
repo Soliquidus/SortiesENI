@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% trans %}Edit campus{% endtrans %}{% endblock %}
+
+{% block body %}
+    <form method="post" action="{{ path('edit_campus', {id: campus.id}) }}">
+        <section id="about" class="section-padding">
+            <div class="container">
+                <div class="row login-row">
+                    <div class="col-lg-5 col-md-5 col-sm-5 login-row">
+                        <div class="education wow fadeInRight" data-wow-delay="0.3s">
+                            <ul class="login">
+                                <li>
+                                    <i class="icon-home"></i>
+                                    <h2 class="login-title">{% trans %}Edit campus{% endtrans %}</h2>
+                                </li>
+                                <li>
+                                    <div class="content-text">
+                                        <h3 class="line-title">{% trans %}Name{% endtrans %}</h3>
+                                        <label class="_title"></label>{{ form_widget(form.campusName, {'attr': {'class': 'form-control'}}) }}
+                                    </div>
+                                </li>
+                                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                                {{ form_end(form) }}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </form>
+{% endblock %}

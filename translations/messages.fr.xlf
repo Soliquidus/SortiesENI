@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="WsJl85a" resname="Confirm password">
+        <source>Confirm password</source>
+        <target>Confirmer mot de passe</target>
+      </trans-unit>
+      <trans-unit id="tRLZfny" resname="User">
+        <source>User</source>
+        <target>Utilisateur</target>
+      </trans-unit>
+      <trans-unit id="59PnafP" resname="Administrator">
+        <source>Administrator</source>
+        <target>Administrateur</target>
+      </trans-unit>
+      <trans-unit id="VMhcOeE" resname="Passwords must be the same">
+        <source>Passwords must be the same</source>
+        <target>Les mots de passe doivent être identiques</target>
+      </trans-unit>
+      <trans-unit id="rQ8rnE." resname="Please upload a valid vignette Media file">
+        <source>Please upload a valid vignette Media file</source>
+        <target>Veuillez choisir un format d'image compatible</target>
+      </trans-unit>
+      <trans-unit id="9vRoj.I" resname="Send">
+        <source>Send</source>
+        <target>Envoyer</target>
+      </trans-unit>
+      <trans-unit id="cu8Xm0q" resname="Role user">
+        <source>Role user</source>
+        <target>Rôle utilisateur</target>
+      </trans-unit>
+      <trans-unit id="lCg80Aq" resname="Add campus">
+        <source>Add campus</source>
+        <target>Ajouter campus</target>
+      </trans-unit>
+      <trans-unit id="7SZKsPN" resname="Update campus">
+        <source>Update campus</source>
+        <target>Mettre à jour campus</target>
+      </trans-unit>
+      <trans-unit id="U6fegLi" resname="Add city">
+        <source>Add city</source>
+        <target>Ajouter ville</target>
+      </trans-unit>
+      <trans-unit id="jCRW0sg" resname="Update city">
+        <source>Update city</source>
+        <target>Mettre à jour ville</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

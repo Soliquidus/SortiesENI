@@ -1,0 +1,120 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% trans %}Profile{% endtrans %}{% endblock %}
+
+{% block body %}
+    <div id="profileIndex" class="jumbotron mt-2">
+        <h1 class="text-center display-4 lead wow fadeInUp">{% trans %}My Profile{% endtrans %}</h1>
+        <div class="text-center wow fadeIn">
+            {% if app.user.picture is not null %}
+                <img class="img-profile-2 rounded-circle" src="{{ asset('files/images/users/' ~ app.user.picture) }}" style="max-width: 15rem" alt="{{ app.user.username }}">
+            {% else %}
+                <i class="fas fa-user-circle fa-9x"></i>
+            {% endif %}
+        </div>
+        <div class="text-center">
+            <a href="{{ path('profile') }}" class="btn btn-primary w-30 mt-4 mb-4 wow fadeInDown">{% trans %}My Profile{% endtrans %}</a>
+            <a href="{{ path('profile_edit') }}" class="btn btn-primary w-30 mt-4 mb-4 wow fadeInDown">{% trans %}Change my profile{% endtrans %}</a>
+            <a href="{{ path('profil_edit_password') }}" class="btn btn-primary w-30 mt-4 mb-4 wow fadeInDown">{% trans %}Change my password{% endtrans %}</a>
+        </div>
+        <div class="text-center wow fadeInDown" data-wow-delay="0.50s">
+            <h1 class="d-block">{{ app.user.lastName }} {{ app.user.firstName }}</h1>
+            <p class="title d-block">({{ app.user.username }})</p>
+            {% if app.user.email is not null %}
+                <a href="#" class="d-block"><i class="fas fa-at"></i> {{ app.user.email }}</a>
+            {% endif %}
+            {% if app.user.phoneNumber is not null %}
+                <a href="#" class="d-block"><i class="fas fa-phone"></i> {{ app.user.phoneNumber }}</a>
+            {% endif %}
+        </div>
+    </div>
+    <div class="text-center w-100">
+        {% if edit %}
+            {% if form is not null %}
+                <form method="post" enctype="multipart/form-data" action="{{ path('profile_edit') }}">
+                    {{ form_start(form, {'attr': {'novalidate': 'novalidate', 'autocomplete': 'off'}}) }}
+                    <section id="profile" class="section-padding">
+                        <div class="container">
+                            <div class="row profile-row">
+                                <div class="col-lg-5 col-md-5 col-sm-5 profile-row">
+                                    <div class="education wow fadeInRight" data-wow-delay="0.3s">
+                                        <ul class="login">
+                                            <li>
+                                                <i class="icon-user"></i>
+                                                <h2 class="login-title">{% trans %}Change my profile{% endtrans %}</h2>
+                                            </li>
+                                            <li>
+                                                <div class="content-text">
+                                                    <h3 class="line-title">{% trans %}Username{% endtrans %}</h3>
+                                                    <label class="_username"></label>{{ form_widget(form.username, {'attr': {'class': 'form-control'}}) }}
+                                                    <h3 class="line-title">{% trans %}Last name{% endtrans %}</h3>
+                                                    <label class="_lastName"></label> {{ form_widget(form.lastName, {'attr': {'class': 'form-control'}}) }}
+                                                    <h3 class="line-title">{% trans %}First name{% endtrans %}</h3>
+                                                    <label class="_firstName"></label> {{ form_widget(form.firstName, {'attr': {'class': 'form-control'}}) }}
+                                            </li>
+                                            <li>
+                                                <div class="content-text">
+                                                    <h3 class="line-title">{% trans %}Phone number{% endtrans %}</h3>
+                                                    <label class="_phone"></label> {{ form_widget(form.phoneNumber, {'attr': {'class': 'form-control'}}) }}
+                                                    <h3 class="line-title">Email</h3>
+                                                    <label class="_mail"></label> {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+                                                    <h3 class="line-title">{% trans %}Profile picture{% endtrans %}</h3>
+                                                    <label class="_picture"></label> {{ form_widget(form.picture, {'attr': {'class': 'form-control'}}) }}
+                                                    {% if is_granted('ROLE_ADMIN') %}
+                                                        <h3 class="line-title">Campus</h3>
+                                                        <label class="_campus"></label> {{ form_widget(form.campus, {'attr': {'class': 'form-control'}}) }}
+                                                    {% endif %}
+                                                </div>
+                                            </li>
+                                            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                                            <button class="btn-primary btn save w-100">{% trans %}Update my profile{% endtrans %}</button>
+                                            {{ form_end(form) }}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </form>
+            {% endif %}
+        {% elseif edit_password %}
+            {% if form is not null %}
+                <form method="post" enctype="multipart/form-data" action="{{ path('profil_edit_password') }}">
+                    {{ form_start(form, {'attr': {'novalidate': 'novalidate', 'autocomplete': 'off'}}) }}
+                    <section id="profile" class="section-padding">
+                        <div class="container">
+                            <div class="row profile-row">
+                                <div class="col-lg-5 col-md-5 col-sm-5 profile-row">
+                                    <div class="education wow fadeInRight" data-wow-delay="0.3s">
+                                        <ul class="login">
+                                            <li>
+                                                <i class="icon-key"></i>
+                                                <h2 class="login-title">{% trans %}Change my password{% endtrans %} (WORK IN PROGRESS)</h2>
+                                            </li>
+                                            <li>
+                                                <div class="content-text">
+                                                    <h3 class="line-title">{% trans %}Password{% endtrans %}</h3>
+                                                    <label class="_password"></label>{{ form_widget(form.password) }}
+                                            </li>
+                                            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                                            <button class="btn-primary btn save w-100">{% trans %}Change password{% endtrans %}</button>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </form>
+            {% endif %}
+        {% else %}
+            <h1><i class="fas fa-university"></i> Campus</h1>
+            <div class="list-group">
+                {% if app.user.campus is not null %}
+                    <a class="list-group-item list-group-item-action" href="#">{{ app.user.campus.campusName }}</a>
+                {% else %}
+                    <a class="list-group-item list-group-item-action" href="#">{% trans %}No campus at the moment{% endtrans %}</a>
+                {% endif %}
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

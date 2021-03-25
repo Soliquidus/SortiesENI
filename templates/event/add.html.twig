@@ -1,0 +1,133 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% trans %}Add event{% endtrans %}{% endblock %}
+
+{% block body %}
+    {{ form_start(form, {'attr': {'novalidate': 'novalidate', 'autocomplete': 'off'}}) }}
+    {% if form.newAddress.vars.errors.form.getErrors(true)|length %}
+        <div class="element" style="display: none">{{ form_row(form.begins_at) }}</div>
+        <div class="element" style="display: none">{{ form_row(form.duration) }}</div>
+        <div class="element" style="display: none">{{ form_row(form.ends_at) }}</div>
+        <div class="element" style="display: none">{{ form_row(form.subscriptions_max) }}</div>
+        <div class="element" style="display: none">{{ form_row(form.description) }}</div>
+        <div class="element" style="display: none">{{ form_row(form.url_picture) }}</div>
+        <div class="element" style="display: none">{{ form_row(form.city) }}</div>
+        <div class="element" style="display: none">{{ form_row(form.address) }}</div>
+        <div class="element" style="display: none">{{ form_row(form.addAddress) }}</div>
+
+        {{ form_row(form.newAddress) }}
+        {{ form_row(form.saveWithAddress) }}
+
+        <button class="btn save btn-info" style="display: none">{{ button_label|default('Save') }}</button>
+
+    {% else %}
+        <form method="post" action="{{ path('add_event') }}">
+            <section id="about" class="section-padding">
+                <div class="container">
+                    <div class="row login-row">
+                        <div class="col-lg-5 col-md-5 col-sm-5 login-row">
+                            <div class="education wow fadeInRight" data-wow-delay="0.3s">
+                                <ul class="login">
+                                    <li>
+                                        <i class="icon-event"></i>
+                                        <h2 class="login-title">{% trans %}Add event{% endtrans %}</h2>
+                                    </li>
+                                    <li>
+                                        <div class="content-text">
+                                            <h3 class="line-title">{% trans %}Event title{% endtrans %}</h3>
+                                            <label class="_title"></label>{{ form_widget(form.title, {'attr': {'class': 'form-control'}}) }}
+                                            <h3 class="line-title">Campus</h3>
+                                            <label class="_title"></label>{{ form_widget(form.campus, {'attr': {'class': 'form-control'}}) }}
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="content-text">
+                                            <h3 class="line-title">{% trans %}Start{% endtrans %}</h3>
+                                            <label for="_beginsAt" ></label>{{ form_row(form.beginsAt) }}
+                                            <h3 class="line-title">{% trans %}Duration{% endtrans %}</h3>
+                                            <label class="_duration"></label> {{ form_widget(form.duration, {'attr': {'class': 'form-control'}}) }}
+                                            <h3 class="line-title">{% trans %}End{% endtrans %}</h3>
+                                            <label for="_beginsAt"></label>{{ form_row(form.endsAt) }}
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="content-text">
+                                            <h3 class="line-title">{% trans %}Description{% endtrans %}</h3>
+                                            <label for="_description"></label>{{ form_widget(form.description, {'attr': {'class': 'form-control'}}) }}
+                                            <label for="_subscriptionsMax"></label>
+                                            <h3 class="line-title">{% trans %}Max subscribers{% endtrans %}</h3>
+                                            {{ form_widget(form.subscriptionsMax, {'attr': {'class': 'form-control'}}) }}
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="content-text">
+                                            <h3 class="line-title">{% trans %}Choose a city :{% endtrans %}</h3>
+                                            <label for="_beginsAt"></label>{{ form_widget(form.city, {'attr': {'class': 'form-control'}}) }}
+                                            <h3 class="line-title">{% trans %}Choose an address :{% endtrans %}</h3>
+                                            <label for="_beginsAt"></label>{{ form_widget(form.address, {'attr': {'class': 'form-control'}}) }}
+                                            <h3 class="line-title">{% trans %}Picture url{% endtrans %}</h3>
+                                            <label for="_beginsAt"></label>{{ form_widget(form.urlPicture, {'attr': {'class': 'form-control'}}) }}
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="content-text">
+                                            <h3 class="element line-title">{% trans %}Address not listed ?{% endtrans %}</h3>
+                                            <div class="element">
+                                                <label class="element"></label>{{ form_row(form.addAddress, {'attr': {'style':'display:none', 'class': 'btn btn-primary'}}) }}
+                                                <div class="element newPlace" style="display: none">
+                                                    <h3 class="line-title">{% trans %}Address title{% endtrans %}</h3>
+                                                    <label for="_title"></label>{{ form_widget(form.newAddress.title, {'attr': {'class': 'form-control'}}) }}
+                                                    <h3 class="line-title">{% trans %}Street{% endtrans %}</h3>
+                                                    <label for="_street"></label>{{ form_widget(form.newAddress.street, {'attr': {'class': 'form-control'}}) }}
+                                                    <h3 class="line-title">{% trans %}City{% endtrans %}</h3>
+                                                    <label for="_city"></label>{{ form_widget(form.newAddress.city, {'attr': {'class': 'form-control'}}) }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                                    {{ form_row(form.saveWithAddress, {'attr': {'style': 'display:none'}}) }}
+                                    {{ form_end(form) }}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </form>
+    {% endif %}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        let $city = $('#event_city');
+        $city.change(function () {
+            let $form = $(this).closest('form');
+            let data = {};
+            data[$city.attr('name')] = $city.val();
+            $.ajax({
+                url: $form.attr('action'),
+                type: $form.attr('method'),
+                data: data,
+                success: function (html) {
+                    $('#event_addAddress').css('display', 'block');
+                    $('#event_address').replaceWith(
+                        $(html).find('#event_address').removeClass('is-invalid')
+                    );
+                }
+            });
+        });
+
+        $('form[name="event"]').on('click', '#event_addAddress', function (e) {
+            e.preventDefault();
+            $('div.element.newPlace').css('display', 'block');
+            $('#event_newAddress_city').val($(`#event_city`).val());
+            $('#event_city').closest('div').remove();
+            $('#event_addAddress').remove();
+            $('button.btn.save').remove();
+            $('#event_saveWithAddress').css('display', 'block');
+            $('#event_address').closest('div').remove();
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+{% block title %}{% trans %}Add user{% endtrans %}{% endblock %}
+
+{% block body %}
+    <form method="post" action="{{ path('add_user') }}">
+        <section id="about" class="section-padding">
+            <div class="container">
+                <div class="row login-row">
+                    <div class="col-lg-5 col-md-5 col-sm-5 login-row">
+                        <div class="education wow fadeInRight" data-wow-delay="0.3s">
+                            <ul class="login">
+                                <li>
+                                    <i class="icon-user"></i>
+                                    <h2 class="login-title">{% trans %}Add user{% endtrans %}</h2>
+                                </li>
+                                <li>
+                                    <div class="content-text">
+                                        <h3 class="line-title">{% trans %}Username{% endtrans %}</h3>
+                                        <label class="_title"></label>{{ form_widget(form.username, {'attr': {'class': 'form-control'}}) }}
+                                        <h3 class="line-title">{% trans %}Last name{% endtrans %}</h3>
+                                        <label class="_title"></label>{{ form_widget(form.firstName, {'attr': {'class': 'form-control'}}) }}
+                                        <h3 class="line-title">{% trans %}First name{% endtrans %}</h3>
+                                        <label class="_title"></label>{{ form_widget(form.lastName, {'attr': {'class': 'form-control'}}) }}
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="content-text">
+                                        <h3 class="line-title">{% trans %}Phone number{% endtrans %}</h3>
+                                        <label class="_duration"></label> {{ form_widget(form.phoneNumber, {'attr': {'class': 'form-control'}}) }}
+                                        <h3 class="line-title">Email</h3>
+                                        <label class="_duration"></label> {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+                                        <h3 class="line-title">Campus</h3>
+                                        <label class="_duration"></label> {{ form_widget(form.campus, {'attr': {'class': 'form-control'}}) }}
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="content-text">
+                                        <h3 class="line-title">{% trans %}Role{% endtrans %}</h3>
+                                        <label class="_duration"></label> {{ form_widget(form.role, {'attr': {'class': 'form-control'}}) }}
+                                        <h3 class="line-title">{% trans %}Picture{% endtrans %}</h3>
+                                        <label class="_duration"></label> {{ form_widget(form.picture, {'attr': {'class': 'form-control'}}) }}
+                                        <h3 class="line-title">{% trans %}Password{% endtrans %}</h3>
+                                        <label class="_duration"></label> {{ form_widget(form.password, {'attr': {'class': 'form-control'}}) }}
+                                </li>
+                                {{ form_row(form._token) }}
+                                <input type="hidden" name="_csrf_token" value="{{ csrf_token('') }}">
+                                <button class="btn-primary btn save w-100">{% trans %}Create user{% endtrans %}</button>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </form>
+{% endblock %}

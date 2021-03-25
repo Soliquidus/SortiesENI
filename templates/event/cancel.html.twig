@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% trans %}Cancel event{% endtrans %}{% endblock %}
+
+{% block body %}
+    <div class="jumbotron mt-2">
+        <h1 class="text-center display-4 lead">{% trans %}Cancel event{% endtrans %}</h1>
+        {% if form is defined and form is not empty %}
+            {{ form(form) }}
+        {% endif %}
+
+    </div>
+{% endblock %}

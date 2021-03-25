@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="588_9PF" resname="Password">
+        <source>Password</source>
+        <target>Mot de passe</target>
+      </trans-unit>
+      <trans-unit id="WsJl85a" resname="Confirm password">
+        <source>Confirm password</source>
+        <target>Confirmer mot de passe</target>
+      </trans-unit>
+      <trans-unit id="tRLZfny" resname="User">
+        <source>User</source>
+        <target>Utilisateur</target>
+      </trans-unit>
+      <trans-unit id="59PnafP" resname="Administrator">
+        <source>Administrator</source>
+        <target>Administrateur</target>
+      </trans-unit>
+      <trans-unit id="VMhcOeE" resname="Passwords must be the same">
+        <source>Passwords must be the same</source>
+        <target>Les mots de passe doivent être identiques</target>
+      </trans-unit>
+      <trans-unit id="rQ8rnE." resname="Please upload a valid vignette Media file">
+        <source>Please upload a valid vignette Media file</source>
+        <target>Veuillez choisir un format d'image compatible</target>
+      </trans-unit>
+      <trans-unit id="9vRoj.I" resname="Send">
+        <source>Send</source>
+        <target>Envoyer</target>
+      </trans-unit>
+      <trans-unit id="kjQGlYm" resname="Active">
+        <source>Active</source>
+        <target>Actif</target>
+      </trans-unit>
+      <trans-unit id="cu8Xm0q" resname="Role user">
+        <source>Role user</source>
+        <target>Rôle utilisateur</target>
+      </trans-unit>
+      <trans-unit id="lCg80Aq" resname="Add campus">
+        <source>Add campus</source>
+        <target>Ajouter campus</target>
+      </trans-unit>
+      <trans-unit id="7SZKsPN" resname="Update campus">
+        <source>Update campus</source>
+        <target>Mettre à jour campus</target>
+      </trans-unit>
+      <trans-unit id="i_WqM4Q" resname="Add address">
+        <source>Add address</source>
+        <target>Ajouter adresse</target>
+      </trans-unit>
+      <trans-unit id="U6fegLi" resname="Add city">
+        <source>Add city</source>
+        <target>Ajouter ville</target>
+      </trans-unit>
+      <trans-unit id="jCRW0sg" resname="Update city">
+        <source>Update city</source>
+        <target>Mettre à jour ville</target>
+      </trans-unit>
+      <trans-unit id="1_GQpMw" resname="Events I manage">
+        <source>Events I manage</source>
+        <target>Sorties dont je suis organisateur</target>
+      </trans-unit>
+      <trans-unit id="0vNtNHD" resname="Events I subscribed to">
+        <source>Events I subscribed to</source>
+        <target>Sorties auxquelles je suis inscrit</target>
+      </trans-unit>
+      <trans-unit id="OeOjtFB" resname="Events I'm not subscribed to">
+        <source>Events I'm not subscribed to</source>
+        <target>Sorties auxquelles je ne suis pas inscrit</target>
+      </trans-unit>
+      <trans-unit id="eMJDwmw" resname="Passed events">
+        <source>Passed events</source>
+        <target>Sorties passées</target>
+      </trans-unit>
+      <trans-unit id="ScJmuqq" resname="Search">
+        <source>Search</source>
+        <target>Chercher</target>
+      </trans-unit>
+      <trans-unit id="KtJudDK" resname="Between the">
+        <source>Between the</source>
+        <target>Entre le</target>
+      </trans-unit>
+      <trans-unit id="RDWeIUk" resname="and the">
+        <source>and the</source>
+        <target>et le</target>
+      </trans-unit>
+      <trans-unit id="fozSBW2" resname="Title">
+        <source>Title</source>
+        <target>Titre</target>
+      </trans-unit>
+      <trans-unit id="WZqfkOf" resname="Search title by words in it">
+        <source>Search title by words in it</source>
+        <target>Chercher titre par mots-clés</target>
+      </trans-unit>
+      <trans-unit id="FEF8V4m" resname="-- Choose a city --">
+        <source>-- Choose a city --</source>
+        <target>-- Choisissez une ville --</target>
+      </trans-unit>
+      <trans-unit id="duJOEXk" resname="-- Choose an address --">
+        <source>-- Choose an address --</source>
+        <target>-- Choisissez une adresse --</target>
+      </trans-unit>
+      <trans-unit id="hZOQ60l" resname="Publish">
+        <source>Publish</source>
+        <target>Publier</target>
+      </trans-unit>
+      <trans-unit id="FQn1YfJ" resname="Save">
+        <source>Save</source>
+        <target>Sauvegarder</target>
+      </trans-unit>
+      <trans-unit id="GXZu1sy" resname="Cancel">
+        <source>Cancel</source>
+        <target>Annuler</target>
+      </trans-unit>
+      <trans-unit id="n8.H0Od" resname="Publish with new address">
+        <source>Publish with new address</source>
+        <target>Publier avec la nouvelle adresse</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

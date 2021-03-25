@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="AqNvcgx" resname="Welcome on">
+        <source>Welcome on</source>
+        <target>Bienvenue sur</target>
+      </trans-unit>
+      <trans-unit id="NcY4has" resname="The best way to organize events between students">
+        <source>The best way to organize events between students</source>
+        <target>Le meilleur moyen d'organiser facilement vos sorties entre élèves</target>
+      </trans-unit>
+      <trans-unit id="3ZyfZmj" resname="See events">
+        <source>See events</source>
+        <target>Voir les sorties</target>
+      </trans-unit>
+      <trans-unit id="dv0QeiU" resname="Last event created">
+        <source>Last event created</source>
+        <target>Dernière sortie ajoutée</target>
+      </trans-unit>
+      <trans-unit id="Vu_PIJV" resname="Address">
+        <source>Address</source>
+        <target>Adresse</target>
+      </trans-unit>
+      <trans-unit id=".DP3Mkb" resname="City">
+        <source>City</source>
+        <target>Ville</target>
+      </trans-unit>
+      <trans-unit id="T9csBrz" resname="Slots">
+        <source>Slots</source>
+        <target>Places</target>
+      </trans-unit>
+      <trans-unit id="o0TInWY" resname="Subscribers">
+        <source>Subscribers</source>
+        <target>Inscrits</target>
+      </trans-unit>
+      <trans-unit id="KhZNVBV" resname="Student">
+        <source>Student</source>
+        <target>Élève</target>
+      </trans-unit>
+      <trans-unit id="Wjrc4AL" resname="Event page">
+        <source>Event page</source>
+        <target>Page de la sortie</target>
+      </trans-unit>
+      <trans-unit id="ZZyceO3" resname="Contact organizer">
+        <source>Contact organizer</source>
+        <target>Contacter l'organisateur</target>
+      </trans-unit>
+      <trans-unit id="OnhpU4i" resname="Home">
+        <source>Home</source>
+        <target>Accueil</target>
+      </trans-unit>
+      <trans-unit id="nWMiwfT" resname="Login">
+        <source>Login</source>
+        <target>Me connecter</target>
+      </trans-unit>
+      <trans-unit id="47ienTP" resname="Username">
+        <source>Username</source>
+        <target>Pseudo</target>
+      </trans-unit>
+      <trans-unit id="eGZPDDm" resname="Enter your username">
+        <source>Enter your username</source>
+        <target>Entrez votre pseudo</target>
+      </trans-unit>
+      <trans-unit id="588_9PF" resname="Password">
+        <source>Password</source>
+        <target>Mot de passe</target>
+      </trans-unit>
+      <trans-unit id="wGv5ZwF" resname="Enter your password">
+        <source>Enter your password</source>
+        <target>Entrez votre mot de passe</target>
+      </trans-unit>
+      <trans-unit id="_TJnqhH" resname="Remember me">
+        <source>Remember me</source>
+        <target>Se souvenir de moi</target>
+      </trans-unit>
+      <trans-unit id="4O3_s6c" resname="Reset password">
+        <source>Reset password</source>
+        <target>Réinitialiser mot de passe</target>
+      </trans-unit>
+      <trans-unit id="GiMD7eB" resname="Connect">
+        <source>Connect</source>
+        <target>Connexion</target>
+      </trans-unit>
+      <trans-unit id="awzJBNC" resname="Users">
+        <source>Users</source>
+        <target>Utilisateurs</target>
+      </trans-unit>
+      <trans-unit id="lWl9FEl" resname="Cities">
+        <source>Cities</source>
+        <target>Villes</target>
+      </trans-unit>
+      <trans-unit id="2VdttBv" resname="Campuses">
+        <source>Campuses</source>
+        <target>Campus</target>
+      </trans-unit>
+      <trans-unit id="dhear8Q" resname="Addresses">
+        <source>Addresses</source>
+        <target>Adresses</target>
+      </trans-unit>
+      <trans-unit id="jRT25y3" resname="Events">
+        <source>Events</source>
+        <target>Sorties</target>
+      </trans-unit>
+      <trans-unit id="1pajW90" resname="Profile">
+        <source>Profile</source>
+        <target>Profil</target>
+      </trans-unit>
+      <trans-unit id="0FJ_Sz1" resname="Logout">
+        <source>Logout</source>
+        <target>Se déconnecter</target>
+      </trans-unit>
+      <trans-unit id="mRv6AVU" resname="My Profile">
+        <source>My Profile</source>
+        <target>Mon profil</target>
+      </trans-unit>
+      <trans-unit id="7GiJrJt" resname="Change my profile">
+        <source>Change my profile</source>
+        <target>Modifier mon profil</target>
+      </trans-unit>
+      <trans-unit id="_Dw4_iO" resname="Change my password">
+        <source>Change my password</source>
+        <target>Modifier mon mot de passe</target>
+      </trans-unit>
+      <trans-unit id="e0iIBJR" resname="Last name">
+        <source>Last name</source>
+        <target>Nom de famille</target>
+      </trans-unit>
+      <trans-unit id="cC75Ie0" resname="First name">
+        <source>First name</source>
+        <target>Prénom</target>
+      </trans-unit>
+      <trans-unit id="MG8bsgZ" resname="Phone number">
+        <source>Phone number</source>
+        <target>Numéro de téléphone</target>
+      </trans-unit>
+      <trans-unit id="p6zE664" resname="Profile picture">
+        <source>Profile picture</source>
+        <target>Image de profil</target>
+      </trans-unit>
+      <trans-unit id="V3CZlQo" resname="Update my profile">
+        <source>Update my profile</source>
+        <target>Mettre à jour mon profil</target>
+      </trans-unit>
+      <trans-unit id="P5yZH2O" resname="Change password">
+        <source>Change password</source>
+        <target>Modifier mon mot de passe</target>
+      </trans-unit>
+      <trans-unit id="plRrQ3Y" resname="No campus at the moment">
+        <source>No campus at the moment</source>
+        <target>Pas de campus pour le moment</target>
+      </trans-unit>
+      <trans-unit id="7sXHOh1" resname="Add user">
+        <source>Add user</source>
+        <target>Ajouter utilisateur</target>
+      </trans-unit>
+      <trans-unit id="FHNqLrn" resname="Role">
+        <source>Role</source>
+        <target>Rôle</target>
+      </trans-unit>
+      <trans-unit id="mhxU9V5" resname="Picture">
+        <source>Picture</source>
+        <target>Image</target>
+      </trans-unit>
+      <trans-unit id="8G2hKMN" resname="Create user">
+        <source>Create user</source>
+        <target>Créer utilisateur</target>
+      </trans-unit>
+      <trans-unit id="CGIsm1m" resname="User manager">
+        <source>User manager</source>
+        <target>Gestion des utilisateurs</target>
+      </trans-unit>
+      <trans-unit id="9aPgtTQ" resname="Import CSV file">
+        <source>Import CSV file</source>
+        <target>Importer un fichier CSV</target>
+      </trans-unit>
+      <trans-unit id="CX05SBa" resname="Import user witch CSV file">
+        <source>Import user witch CSV file</source>
+        <target>Importer utilisateur avec CSV</target>
+      </trans-unit>
+      <trans-unit id="kjQGlYm" resname="Active">
+        <source>Active</source>
+        <target>Actif</target>
+      </trans-unit>
+      <trans-unit id="4tClSWj" resname="Delete">
+        <source>Delete</source>
+        <target>Supprimer</target>
+      </trans-unit>
+      <trans-unit id="DMMvf4H" resname="Do you really want to delete this user?">
+        <source>Do you really want to delete this user?</source>
+        <target>Voulez-vous vraiment supprimer l'utilisateur ?</target>
+      </trans-unit>
+      <trans-unit id="GXZu1sy" resname="Cancel">
+        <source>Cancel</source>
+        <target>Annuler</target>
+      </trans-unit>
+      <trans-unit id="i_WqM4Q" resname="Add address">
+        <source>Add address</source>
+        <target>Ajouter adresse</target>
+      </trans-unit>
+      <trans-unit id="2sXhCK_" resname="Address title">
+        <source>Address title</source>
+        <target>Titre de l'adresse</target>
+      </trans-unit>
+      <trans-unit id="xmZZHfB" resname="Street">
+        <source>Street</source>
+        <target>Rue</target>
+      </trans-unit>
+      <trans-unit id="hHEoU7C" resname="Edit address">
+        <source>Edit address</source>
+        <target>Modifier adresse</target>
+      </trans-unit>
+      <trans-unit id="HwhFLK5" resname="Update address">
+        <source>Update address</source>
+        <target>Mettre à jour l'adresse</target>
+      </trans-unit>
+      <trans-unit id="sf0AA0S" resname="Address manager">
+        <source>Address manager</source>
+        <target>Gestion des adresses</target>
+      </trans-unit>
+      <trans-unit id="RkxP.QG" resname="Edit">
+        <source>Edit</source>
+        <target>Mettre à jour</target>
+      </trans-unit>
+      <trans-unit id=".7rEKn8" resname="No address found...">
+        <source>No address found...</source>
+        <target>Aucune adresse trouvée...</target>
+      </trans-unit>
+      <trans-unit id="3NHVIj9" resname="Name">
+        <source>Name</source>
+        <target>Nom</target>
+      </trans-unit>
+      <trans-unit id="Vq9bcdS" resname="Edit campus">
+        <source>Edit campus</source>
+        <target>Modifier campus</target>
+      </trans-unit>
+      <trans-unit id="JYBSAOQ" resname="Campus manager">
+        <source>Campus manager</source>
+        <target>Gestion des campus</target>
+      </trans-unit>
+      <trans-unit id="CAZDacI" resname="No campus was found...">
+        <source>No campus was found...</source>
+        <target>Aucun campus trouvé...</target>
+      </trans-unit>
+      <trans-unit id="mIYPk4y" resname="Edit city">
+        <source>Edit city</source>
+        <target>Modifier ville</target>
+      </trans-unit>
+      <trans-unit id="rlPOqCK" resname="Postal code">
+        <source>Postal code</source>
+        <target>Code postal</target>
+      </trans-unit>
+      <trans-unit id="hfJDHca" resname="City manager">
+        <source>City manager</source>
+        <target>Gestion des villes</target>
+      </trans-unit>
+      <trans-unit id="BLej0Yx" resname="No city has been found...">
+        <source>No city has been found...</source>
+        <target>Aucune ville trouvée...</target>
+      </trans-unit>
+      <trans-unit id="V9IIvA0" resname="Add event">
+        <source>Add event</source>
+        <target>Ajouter sortie</target>
+      </trans-unit>
+      <trans-unit id="jxlRYxl" resname="All campuses">
+        <source>All campuses</source>
+        <target>Tous les campus</target>
+      </trans-unit>
+      <trans-unit id="ScJmuqq" resname="Search">
+        <source>Search</source>
+        <target>Chercher</target>
+      </trans-unit>
+      <trans-unit id="yQImgPi" resname="people">
+        <source>people</source>
+        <target>personnes</target>
+      </trans-unit>
+      <trans-unit id="P4WWf3_" resname="Cancel subscription">
+        <source>Cancel subscription</source>
+        <target>Annuler participation</target>
+      </trans-unit>
+      <trans-unit id="xFoOSLr" resname="Subscribe to event">
+        <source>Subscribe to event</source>
+        <target>Participer à l'évènement</target>
+      </trans-unit>
+      <trans-unit id="XqCeQqb" resname="Subscription not available">
+        <source>Subscription not available</source>
+        <target>Participation impossible</target>
+      </trans-unit>
+      <trans-unit id="jsRgLOS" resname="Event title">
+        <source>Event title</source>
+        <target>Titre de la sortie</target>
+      </trans-unit>
+      <trans-unit id="5LufHs6" resname="Start">
+        <source>Start</source>
+        <target>Date de début</target>
+      </trans-unit>
+      <trans-unit id="T8UqPEx" resname="Duration">
+        <source>Duration</source>
+        <target>Durée de la sortie</target>
+      </trans-unit>
+      <trans-unit id="9NseSEd" resname="End">
+        <source>End</source>
+        <target>Date de fin</target>
+      </trans-unit>
+      <trans-unit id="Um4Ah8w" resname="Description">
+        <source>Description</source>
+        <target>Description de la sortie</target>
+      </trans-unit>
+      <trans-unit id="yZ2LE9q" resname="Max subscribers">
+        <source>Max subscribers</source>
+        <target>Participants max</target>
+      </trans-unit>
+      <trans-unit id=".Of1QfQ" resname="Choose a city :">
+        <source>Choose a city :</source>
+        <target>Choisissez une ville :</target>
+      </trans-unit>
+      <trans-unit id="zWL0KXd" resname="Choose an address :">
+        <source>Choose an address :</source>
+        <target>Choisissez une adresse :</target>
+      </trans-unit>
+      <trans-unit id="C4o7MbQ" resname="Picture url">
+        <source>Picture url</source>
+        <target>Url de l'image du lieu</target>
+      </trans-unit>
+      <trans-unit id="ZmO_7sN" resname="Address not listed ?">
+        <source>Address not listed ?</source>
+        <target>Adresse non trouvée ?</target>
+      </trans-unit>
+      <trans-unit id="5DdlSq8" resname="Cancel event">
+        <source>Cancel event</source>
+        <target>Annuler sortie</target>
+      </trans-unit>
+      <trans-unit id="peymu6t" resname="Edit event">
+        <source>Edit event</source>
+        <target>Modifier sortie</target>
+      </trans-unit>
+      <trans-unit id="_cfz2Ch" resname="Event details">
+        <source>Event details</source>
+        <target>Détails de la sortie</target>
+      </trans-unit>
+      <trans-unit id="ltvt7Kf" resname="Starts">
+        <source>Starts</source>
+        <target>Début</target>
+      </trans-unit>
+      <trans-unit id="6YmCyfK" resname="Ends">
+        <source>Ends</source>
+        <target>Fin</target>
+      </trans-unit>
+      <trans-unit id="cVqcwMN" resname="Organizer">
+        <source>Organizer</source>
+        <target>Organisateur</target>
+      </trans-unit>
+      <trans-unit id="Khm7eN4" resname="Students">
+        <source>Students</source>
+        <target>Élèves</target>
+      </trans-unit>
+      <trans-unit id="HISderS" resname="Event manager">
+        <source>Event manager</source>
+        <target>Gestion des évènements</target>
+      </trans-unit>
+      <trans-unit id="fozSBW2" resname="Title">
+        <source>Title</source>
+        <target>Titre</target>
+      </trans-unit>
+      <trans-unit id="iER7gwk" resname="Creator">
+        <source>Creator</source>
+        <target>Organisateur</target>
+      </trans-unit>
+      <trans-unit id="tCgNeiT" resname="No event was found...">
+        <source>No event was found...</source>
+        <target>Aucune sortie trouvée</target>
+      </trans-unit>
+      <trans-unit id="whkvV6n" resname="Happenings">
+        <source>Happenings</source>
+        <target>Évènements</target>
+      </trans-unit>
+      <trans-unit id="BbiNGPw" resname="Edit user">
+        <source>Edit user</source>
+        <target>Modifier utilisateur</target>
+      </trans-unit>
+      <trans-unit id="y8Mw4W." resname="Active account">
+        <source>Active account</source>
+        <target>Compte actif</target>
+      </trans-unit>
+      <trans-unit id="YCuLFge" resname="Update user">
+        <source>Update user</source>
+        <target>Mettre à jour l'utilisateur</target>
+      </trans-unit>
+      <trans-unit id="o6BE2XL" resname="Contact Organizer">
+        <source>Contact Organizer</source>
+        <target>Contacter l'organisateur</target>
+      </trans-unit>
+      <trans-unit id="k6JrHq." resname="Send message">
+        <source>Send message</source>
+        <target>Envoyer message</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
